@@ -11,7 +11,7 @@ import java.util.*
 
 /**
  * Created by Artem Botnev on 17.11.2017.
- * Invoke instance of this class when you need to set time notification
+ * Call instance of this class when you need to set time notification
  */
 
 class TaskAlarmer(val context: Context) {

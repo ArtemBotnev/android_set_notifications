@@ -13,5 +13,4 @@ class BootReceiver : BroadcastReceiver() {
         if (intent.action == "android.intent.action.BOOT_COMPLETED")
             TaskAlarmer(context)
     }
-
 }

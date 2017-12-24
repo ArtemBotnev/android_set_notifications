@@ -23,4 +23,3 @@ data class Task(val id: UUID) {
 
     override fun toString(): String = title
 }
-
