@@ -8,9 +8,10 @@ import android.content.Intent
  * Created by Artem Botnev on 22.11.2017.
  */
 
-class BootReceiver: BroadcastReceiver(){
+class BootReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {
-        if(intent.action == "android.intent.action.BOOT_COMPLETED")
+        if (intent.action == "android.intent.action.BOOT_COMPLETED")
             TaskAlarmer(context)
     }
+
 }

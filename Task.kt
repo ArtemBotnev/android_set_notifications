@@ -6,11 +6,12 @@ import java.util.*
  * Created by Artem Botnev on 11.11.2017.
  */
 
-data class Task(val id: UUID){
-    constructor(): this(UUID.randomUUID())
+data class Task(val id: UUID) {
+    constructor() : this(UUID.randomUUID())
 
     var title = ""
     var description = ""
+    var priority: Int = 0
     var createDate: Date? = null
     var eventDate: Date? = null
     var alertDate: Date? = null

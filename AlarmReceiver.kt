@@ -10,7 +10,7 @@ import android.support.v4.app.NotificationManagerCompat
  * Created by Artem Botnev on 20.11.2017.
  */
 
-class AlarmReceiver: BroadcastReceiver() {
+class AlarmReceiver : BroadcastReceiver() {
     companion object {
         private val NOTIFICATION_ID = 200 // unique number of notification
         private val TITLE = "name"
@@ -19,7 +19,7 @@ class AlarmReceiver: BroadcastReceiver() {
         private val CHANNEL_ID = "ru.artembotnev.tasks.notification_channel"
 
         fun createIntent(context: Context, title: String, time: String, strConst: String,
-                         amount: Int): Intent{
+                         amount: Int): Intent {
             val intent = Intent(context, AlarmReceiver::class.java)
             intent.action = strConst
             intent.putExtra(TITLE, title)
@@ -29,7 +29,7 @@ class AlarmReceiver: BroadcastReceiver() {
             return intent
         }
 
-        fun createIntent(context: Context, strConst: String): Intent{
+        fun createIntent(context: Context, strConst: String): Intent {
             val intent = Intent(context, AlarmReceiver::class.java)
             intent.action = strConst
 
@@ -37,7 +37,7 @@ class AlarmReceiver: BroadcastReceiver() {
         }
     }
 
-   override fun onReceive(context: Context, intent: Intent) {
+    override fun onReceive(context: Context, intent: Intent) {
         fun unpack(const: String) = intent.getStringExtra(const)
         val context = context.applicationContext
         val name = unpack(TITLE) //event's name
@@ -48,7 +48,7 @@ class AlarmReceiver: BroadcastReceiver() {
     }
 
     private fun startMessage(nameTask: String, timeTask: String,
-                             amountTask: Int, context: Context){
+                             amountTask: Int, context: Context) {
 
         val amountTask = amountTask % 5 // no more than 5 messages on the screen
 
